@@ -1,13 +1,16 @@
+import { Link } from 'react-router';
 import logo from '/images/logo.png';
 
 export default function Header() {
     return (
         <header>
-            <img className="logoImg" src={logo} alt="logo" />
+            <Link to="/">
+                <img className="logoImg" src={logo} alt="logo" />
+            </Link>
          <nav>
             <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Vans</a></li>
+              <li><Link to ="/about">About</Link></li>
+              <li><Link to="/vans">Vans</Link></li>
             </ul>
          </nav>
         </header>

@@ -1,19 +1,20 @@
 
 import './App.css'
-import Header from './components/Header'
-import background_main from "/images/background_main.png"
+import { BrowserRouter, Routes, Route } from 'react-router'
+import Home from './pages/Home'
+import About from './pages/About'
 
 function App() {
 
   return (
     <>
-     <Header />
-     <main>
-        <img className="backgroundImg" src={background_main}  />
-     </main>
-     <footer>
-        <p>© 2022 #VANLIFE</p>
-     </footer>
+      <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />}/>
+            <Route path="/about" element={<About />}/>
+          </Routes>
+        </BrowserRouter>
+        
     </>
   )
 }
