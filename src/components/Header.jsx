@@ -1,18 +1,36 @@
-import { Link } from 'react-router';
-import logo from '/images/logo.png';
+
+import { Link, NavLink } from "react-router"
 
 export default function Header() {
+    const activeStyles = {
+        fontWeight: "bold",
+        textDecoration: "underline",
+        color: "#161616"
+    }
+    
     return (
         <header>
-            <Link to="/">
-                <img className="logoImg" src={logo} alt="logo" />
-            </Link>
-         <nav>
-            <ul>
-              <li><Link to ="/about">About</Link></li>
-              <li><Link to="/vans">Vans</Link></li>
-            </ul>
-         </nav>
+            <Link className="site-logo" to="/">#VanLife</Link>
+            <nav>
+                <NavLink 
+                    to="/host"
+                    style={({isActive}) => isActive ? activeStyles : null}
+                >
+                    Host
+                </NavLink>
+                <NavLink 
+                    to="/about"
+                    style={({isActive}) => isActive ? activeStyles : null}
+                >
+                    About
+                </NavLink>
+                <NavLink 
+                    to="/vans"
+                    style={({isActive}) => isActive ? activeStyles : null}
+                >
+                    Vans
+                </NavLink>
+            </nav>
         </header>
-    );
- }
+    )
+}
